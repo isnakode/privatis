@@ -1,0 +1,33 @@
+---
+// src/components/TrackCard.astro
+const {
+  icon,
+  title,
+  skills,
+  colorClass = "text-blue-500",
+  bgClass = "bg-blue-50",
+} = Astro.props;
+
+const Icon = icon;
+---
+
+<div
+  class="track-card bg-white p-8 rounded-3xl border border-slate-100 transition-all duration-500 flex flex-col group"
+>
+  <div
+    class={`w-16 h-16 rounded-2xl ${bgClass} ${colorClass} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform`}
+  >
+    <Icon />
+  </div>
+  <h3 class="text-2xl font-bold text-slate-900 mb-4">{title}</h3>
+  <ul class="space-y-4 mb-8 grow">
+    {
+      skills.map((skill: string) => (
+        <li class="flex items-center gap-3 text-slate-600">
+          <span class={`w-1.5 h-1.5 rounded-full ${colorClass}/40`} />
+          {skill}
+        </li>
+      ))
+    }
+  </ul>
+</div>
