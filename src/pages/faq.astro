@@ -1,0 +1,37 @@
+---
+const faqs = [
+  { q: "Belajarnya via apa? Apakah bisa offline?", a: "Kita sangat fleksibel. Sesi bisa dilakukan secara Online (via Zoom/Google Meet) atau tatap muka langsung di area Lombok sesuai dengan kesepakatan jadwal." },
+  { q: "Satu sesi durasinya berapa lama?", a: "Satu sesi berdurasi 60 menit. Fokus utamanya adalah hands-on (praktik langsung) dan penyelesaian masalah teknis yang sedang kamu hadapi." },
+  { q: "Kalau saya belum punya dasar sama sekali, apa bisa mulai dari nol?", a: "Bisa banget! Kurikulum akan kami sesuaikan sepenuhnya dengan titik mulai kamu sekarang, jadi tidak perlu khawatir tertinggal." },
+  { q: "Apakah saya harus bawa laptop sendiri?", a: "Ya, untuk efektivitas praktik dan kenyamanan lingkungan kerja, sangat disarankan menggunakan perangkat pribadi kamu sendiri." },
+  { q: "Materinya bisa request nggak?", a: "Tentu. Kamu bisa membawa proyek pribadi yang sedang dikerjakan atau kita susun roadmap baru dari nol yang paling relevan dengan goals karier atau bisnismu." },
+  { q: "Boleh bayar per sesi atau harus paket?", a: "Untuk menjaga kontinuitas belajar dan memastikan proyek kamu selesai, kami menerapkan sistem paket (Starter/Growth/Mastery). Ini juga membantu kita lebih fokus pada pencapaian target jangka panjang." },
+  { q: "Apa yang terjadi jika saya berhalangan hadir?", a: "Tidak masalah. Jadwal bisa di-reschedule maksimal H-1 sebelum sesi dimulai agar kami bisa mengatur ulang jadwal mentor dengan efisien." },
+  { q: "Apakah ada jaminan skill pasti bisa?", a: "Kami menjamin akses 1-on-1 penuh dan pendampingan intensif sampai proyekmu berjalan. Kesuksesan akhir tentu bergantung pada konsistensi latihan dan kolaborasi kita selama sesi berlangsung." }
+];
+---
+
+<section class="py-24 bg-white" id="faq">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl font-extrabold text-slate-900 mb-12 text-center">
+      Pertanyaan yang Sering Diajukan
+    </h2>
+    
+    <div class="space-y-4">
+      {faqs.map((item) => (
+        <details class="group border border-slate-200 rounded-2xl bg-white hover:border-blue-500 transition-colors">
+          <summary class="list-none px-6 py-5 font-bold text-slate-900 cursor-pointer flex justify-between items-center">
+            {item.q}
+            <!-- Ikon panah yang berputar saat dibuka -->
+            <span class="transition-transform duration-300 group-open:rotate-180">
+              ▼
+            </span>
+          </summary>
+          <div class="px-6 pb-5 text-slate-800 text-sm leading-relaxed border-t border-slate-100 pt-4">
+            {item.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

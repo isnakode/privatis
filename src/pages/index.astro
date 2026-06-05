@@ -25,8 +25,9 @@ import {
 	CodeIcon,
 	LightbulbIcon,
 } from "@lucide/astro";
+import Faq from "./faq.astro";
 const waLink =
-	"https://wa.me/6287874491453?text=Halo%20Kak%2C%20saya%20mau%20konsultasi%20tentang%20program%20tutoring%20privatnya%20nih.%20Boleh%20dibantu%20informasi%20detailnya%3F%20Terima%20kasih";
+	"https://wa.me/6287874491453?text=Halo%20Kak%2C%20saya%20mau%20konsultasi%20tentang%20program%20tutoring%20privatnya%20nih.%20Boleh%20dibantu%20informasi%20detailnya?";
 
 // Data track untuk dilooping
 const tracks = [
@@ -525,24 +526,23 @@ mentor.start_session(you)</pre>
 
 		<section class="py-32 bg-white" id="pricing">
 			<div class="max-w-7xl mx-auto px-6">
-				<!-- Header -->
 				<div class="text-center mb-20">
 					<h2
 						class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6"
 					>
-						Investasi untuk Hasil Nyata
+						Pilih Komitmen Progresmu
 					</h2>
 					<p class="text-xl text-slate-500 max-w-2xl mx-auto">
-						Kualitas 1-on-1 yang sama untuk setiap murid. Pilih
-						komitmen belajarmu
+						Semua paket mendapatkan fasilitas 1-on-1 eksklusif,
+						kurikulum yang disesuaikan dengan kebutuhanmu, dan
+						mentor yang fokus penuh pada hasil proyekmu.
 					</p>
 				</div>
 
-				<!-- Pricing Cards -->
-				<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-					<!-- Starter -->
+				<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+					<!-- Paket-paket -->
 					<div
-						class="p-8 rounded-3xl border border-slate-200 hover:border-blue-500 transition-all duration-300"
+						class="p-8 rounded-3xl border border-slate-200 hover:border-blue-500 transition-all duration-300 flex flex-col"
 					>
 						<h3 class="text-lg font-bold text-slate-900 mb-2">
 							Starter
@@ -552,28 +552,29 @@ mentor.start_session(you)</pre>
 						>
 							Rp 360rb
 						</div>
-						<ul class="text-slate-600 text-sm space-y-4 mb-8">
-							<li>✓ 4 Sesi Privat Intensif</li>
-							<li>✓ Kurikulum Custom</li>
-							<li>✓ Sesi tanya-jawab via chat</li>
-							<li>✓ Cocok untuk *quick win*</li>
-						</ul>
+						<div
+							class="text-5xl font-black text-slate-400 mb-6 italic"
+						>
+							4 Sesi
+						</div>
+						<div class="grow text-slate-500 text-sm mb-8">
+							Ideal untuk mulai membangun pondasi atau
+							menyelesaikan satu proyek spesifik.
+						</div>
 						<a
 							href={waLink}
 							class="block text-center py-4 border-2 border-slate-900 rounded-xl font-bold hover:bg-slate-900 hover:text-white transition-all"
+							>Pilih Starter</a
 						>
-							Mulai Sekarang
-						</a>
 					</div>
 
-					<!-- Growth (Highlighted) -->
 					<div
-						class="p-8 rounded-3xl bg-slate-900 text-white relative shadow-2xl shadow-blue-500/20 transform md:-translate-y-4"
+						class="p-8 rounded-3xl bg-slate-900 text-white relative shadow-2xl shadow-blue-500/20 transform md:-translate-y-4 flex flex-col"
 					>
 						<div
 							class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-500 text-[10px] font-bold tracking-widest uppercase rounded-full"
 						>
-							Paling Diminati
+							Populer
 						</div>
 						<h3 class="text-lg font-bold text-slate-400 mb-2">
 							Growth
@@ -581,23 +582,24 @@ mentor.start_session(you)</pre>
 						<div class="text-4xl font-extrabold text-white mb-6">
 							Rp 1jt
 						</div>
-						<ul class="text-slate-300 text-sm space-y-4 mb-8">
-							<li>✓ 12 Sesi Privat Intensif</li>
-							<li>✓ Kurikulum Custom</li>
-							<li>✓ Portfolio/Project Building</li>
-							<li>✓ Support penuh tiap hari</li>
-						</ul>
+						<div
+							class="text-5xl font-black text-white/50 mb-6 italic"
+						>
+							12 Sesi
+						</div>
+						<div class="grow text-slate-300 text-sm mb-8">
+							Pilihan paling pas untuk hasil maksimal dan
+							pendampingan yang konsisten.
+						</div>
 						<a
 							href={waLink}
 							class="block text-center py-4 bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-600 transition-all"
+							>Pilih Growth</a
 						>
-							Pilih Paket Ini
-						</a>
 					</div>
 
-					<!-- Mastery -->
 					<div
-						class="p-8 rounded-3xl border border-slate-200 hover:border-blue-500 transition-all duration-300"
+						class="p-8 rounded-3xl border border-slate-200 hover:border-blue-500 transition-all duration-300 flex flex-col"
 					>
 						<h3 class="text-lg font-bold text-slate-900 mb-2">
 							Mastery
@@ -607,44 +609,47 @@ mentor.start_session(you)</pre>
 						>
 							Rp 1.8jt
 						</div>
-						<ul class="text-slate-600 text-sm space-y-4 mb-8">
-							<li>✓ 24 Sesi Privat Intensif</li>
-							<li>✓ Kurikulum Custom Advanced</li>
-							<li>✓ Full Project Deployment</li>
-							<li>✓ Harga per sesi paling hemat</li>
-						</ul>
+						<div
+							class="text-5xl font-black text-slate-400 mb-6 italic"
+						>
+							24 Sesi
+						</div>
+						<div class="grow text-slate-500 text-sm mb-8">
+							Komitmen penuh untuk menguasai teknologi dari nol
+							sampai expert.
+						</div>
 						<a
 							href={waLink}
 							class="block text-center py-4 border-2 border-slate-900 rounded-xl font-bold hover:bg-slate-900 hover:text-white transition-all"
+							>Pilih Mastery</a
 						>
-							Ambil Paket Mastery
-						</a>
 					</div>
 				</div>
 
-				<!-- Consultation Section -->
-				<div
-					class="max-w-4xl mx-auto bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-100 flex flex-col md:flex-row items-center justify-between gap-8"
-				>
-					<div>
-						<h3 class="text-2xl font-bold text-slate-900 mb-2">
-							Belum yakin pilih yang mana?
-						</h3>
-						<p class="text-slate-500">
-							Konsultasikan kebutuhanmu dengan mentor secara
-							langsung. Kami akan bantu tentukan kurikulum dan
-							paket yang paling efektif untuk <b>Goals</b> mu.
-						</p>
-					</div>
-					<a
-						href={waLink}
-						class="shrink-0 px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-xl font-bold hover:border-blue-500 hover:text-blue-500 transition-all flex items-center gap-2"
+				<!-- Footer Info -->
+				<div class="max-w-4xl mx-auto text-center">
+					<p class="text-slate-500 text-sm font-medium mb-8">
+						*Setiap sesi berdurasi 60 menit. Semua paket mencakup
+						akses 1-on-1, kurikulum custom, dan full-support.
+					</p>
+					<div
+						class="bg-slate-50 rounded-2xl p-6 inline-flex items-center gap-6 border border-slate-100"
 					>
-						Konsultasi Gratis
-					</a>
+						<span class="text-slate-600 font-semibold"
+							>Masih ragu menentukan paket?</span
+						>
+						<a
+							href={waLink}
+							target="_blank"
+							class="text-blue-600 font-bold hover:underline"
+							>Konsultasi gratis sekarang →</a
+						>
+					</div>
 				</div>
 			</div>
 		</section>
+
+		<Faq />
 
 		<!-- Final CTA -->
 		<section class="py-24 px-6 overflow-hidden">
