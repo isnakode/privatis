@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import cloudflare from '@astrojs/cloudflare';
+
 const getSiteUrl = () => {
   // Kalau di Cloudflare, pake URL bawaan mereka
   if (process.env.CF_PAGES_URL) return process.env.CF_PAGES_URL;
@@ -15,6 +17,7 @@ const getSiteUrl = () => {
 // https://astro.build/config
 export default defineConfig({
   site: getSiteUrl(),
+
   vite: {
     server: {
       allowedHosts: [
@@ -22,5 +25,7 @@ export default defineConfig({
       ]
     },
     plugins: [tailwindcss()]
-  }
+  },
+
+  adapter: cloudflare()
 });
