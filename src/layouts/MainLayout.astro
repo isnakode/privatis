@@ -102,6 +102,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.15);
       }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SKYF646PJ8"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-SKYF646PJ8");
+    </script>
   </head>
   <body class="font-body antialiased overflow-x-hidden">
     <!-- Navigasi -->
